@@ -1,3 +1,5 @@
+bool Notify_StatusCode(int val);
+
 class IStatusCode
 {
 private:
