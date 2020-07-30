@@ -27,7 +27,7 @@ public:
 
     IStatusCode()
     {
-        
+        StatusCode=StatusCode_NoData;
     }
 };
 #endif
