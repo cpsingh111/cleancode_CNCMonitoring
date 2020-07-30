@@ -1,5 +1,5 @@
-#ifndef IStatusCode.hpp
-#define IStatusCode.hpp
+#ifndef ISTATUSCODE_H
+#define ISTATUSCODE_H
 
 
 #define StatusCode_AllOk 0xFF
