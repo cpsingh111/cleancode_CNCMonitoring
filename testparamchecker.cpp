@@ -2,11 +2,11 @@
 #include <gtest/gtest.h>
 
 
-TEST(Notify_StatusCode, ok) { 
+TEST(StatusCode, ok) { 
     ASSERT_EQ(false, Notify_StatusCode(0xFF));
 }
 
-TEST(Notify_StatusCode, Nok) { 
+TEST(StatusCode, Nok) { 
     ASSERT_EQ(false, Notify_StatusCode(0x00));
 }
 
