@@ -16,7 +16,7 @@ TEST(StatusCode, ControllerBoard) {
 }
 
 
-TEST(StatusCode, Config data) { 
+TEST(StatusCode, Config_data) { 
     ASSERT_EQ(true, Notify_StatusCode(0x02));
 }
 
