@@ -1,9 +1,11 @@
 #include "IStatusCode.hpp"
 
-bool Notify_StatusCode(int val)
+CNC_Status Notify_StatusCode(int val)
 {
     IStatusCode temp;
+    ICNC Obj;
 
     temp.Set_StatusCode(val);
-    return(temp.IsStatusCodeNOk());
+    Obj.StartUpStatusflag =temp.IsStatusCodeNOk()
+    return(Report_Diagnosis());
 }
