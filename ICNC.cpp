@@ -1,11 +1,13 @@
 #include "ICNC.hpp"
 
 
-CNC_Status Report_DIagnosis(){
+CNC_Status Report_Diagnosis(){
+
+    ICNC Obj;
     bool Environmentflag, MachineFlag;
 
-    Environmentflag = OperatingTempflag||OperatingHourflag;
-    MachineFlag = StartUpStatusflag||DimensionVariationflag;
+    Environmentflag = Obj.OperatingTempflag||Obj.OperatingHourflag;
+    MachineFlag = Obj.StartUpStatusflag||Obj.DimensionVariationflag;
 
 
     if(Environmentflag &&MachineFlag)
