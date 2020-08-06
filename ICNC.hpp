@@ -18,14 +18,15 @@ class ICNC
 private:
     CNC_Status CNC_LED;
 public:
-    bool StartUpStatusflag;
-    bool OperatingTempflag;
-    bool DimensionVariationflag;
-    bool OperatingHourflag;
+    static bool StartUpStatusflag;
+    static bool OperatingTempflag;
+    static bool DimensionVariationflag;
+    static bool OperatingHourflag;
 
     ICNC()
     {
        CNC_LED = CNC_Ok;
+        StartUpStatusflag, OperatingTempflag,DimensionVariationflag,OperatingHourflag=false;
     }
 
 };
