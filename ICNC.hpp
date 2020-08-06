@@ -11,6 +11,8 @@ typedef enum
     CNC_CheckMachine_Environment
 }CNC_Status;
 
+CNC_Status Report_Diagnosis();
+
 class ICNC
 {
 private:
@@ -25,8 +27,6 @@ public:
     {
        CNC_LED = CNC_Ok;
     }
-
-     CNC_Status Report_Diagnosis();
 
 };
 
