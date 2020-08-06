@@ -1,6 +1,6 @@
 #include "IStatusCode.hpp"
 
-CNC_Status Notify_StatusCode(int val)
+CNC_Status Notify_StatusCode(float val)
 {
     IStatusCode temp;
     ICNC Obj;
