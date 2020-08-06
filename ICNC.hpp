@@ -26,7 +26,10 @@ public:
     ICNC()
     {
        CNC_LED = CNC_Ok;
-        StartUpStatusflag, OperatingTempflag,DimensionVariationflag,OperatingHourflag=false;
+       StartUpStatusflag=false;
+       OperatingTempflag=false;
+       OperatingHourflag=false;
+       DimensionVariationflag=false;
     }
 
 };
