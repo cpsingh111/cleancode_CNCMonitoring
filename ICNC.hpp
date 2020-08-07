@@ -26,7 +26,7 @@ class ICNC
 {
 private:
     CNC_Status CNC_LED;
-    static bool CNC_Param_flag[Param_List_end];
+    bool CNC_Param_flag[Param_List_end];
 public:
 
     bool Get_CNC_Parameter_flag(CNC_Param_List param)
