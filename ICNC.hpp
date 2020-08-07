@@ -37,9 +37,7 @@ public:
 
     ICNC()
     {
-       for(int i=0;i<Param_List_end;i++){
-           CNC_Param_flag[i]= false;
-       }
+      
     }
 
 };
