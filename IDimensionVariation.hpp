@@ -5,7 +5,7 @@
 
 CNC_Status Notify_DimensionVariation(float val);
 
-class IDimensionVariation
+class IDimensionVariation: public ICNC
 {
 private:
     float DimensionVariation;
