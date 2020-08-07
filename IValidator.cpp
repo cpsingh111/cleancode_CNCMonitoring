@@ -1,6 +1,8 @@
 #include "IValidator.hpp"
 
 
+bool ICNC::CNC_Param_flag[Param_List_end];
+
 bool Validate_Environment_Param()
 {
     ICNC Obj;
