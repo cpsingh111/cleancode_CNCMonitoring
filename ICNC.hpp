@@ -21,7 +21,7 @@ typedef enum
 }CNC_Param_List;
 
 CNC_Status Report_Diagnosis();
-bool CNC_Param_flag[Param_List_end];
+extern bool CNC_Param_flag[Param_List_end];
 
 class ICNC
 {
