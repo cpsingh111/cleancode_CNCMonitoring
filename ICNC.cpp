@@ -1,13 +1,12 @@
 #include "ICNC.hpp"
-
+#include "IValidator.hpp"
 
 CNC_Status Report_Diagnosis(){
 
-    ICNC Obj;
     bool Environmentflag, MachineFlag;
 
-    Environmentflag = Obj.OperatingTempflag||Obj.OperatingHourflag;
-    MachineFlag = Obj.StartUpStatusflag||Obj.DimensionVariationflag;
+    Environmentflag = Validate_Environment_Param();
+    MachineFlag = Validate_Machine_Param();
 
 
     if(Environmentflag &&MachineFlag)
