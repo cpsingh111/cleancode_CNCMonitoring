@@ -21,11 +21,11 @@ typedef enum
 }CNC_Param_List;
 
 CNC_Status Report_Diagnosis();
+bool CNC_Param_flag[Param_List_end];
 
 class ICNC
 {
 private:
-    bool CNC_Param_flag[Param_List_end];
 public:
     bool Get_CNC_Parameter_flag(CNC_Param_List param)
     {
