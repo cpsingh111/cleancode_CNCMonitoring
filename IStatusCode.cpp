@@ -1,5 +1,7 @@
 #include "IStatusCode.hpp"
 
+bool ICNC::CNC_Param_flag[Param_List_end];
+
 CNC_Status Notify_StatusCode(float val)
 {
     IStatusCode temp;
