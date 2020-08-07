@@ -6,6 +6,6 @@ CNC_Status Notify_StatusCode(float val)
     ICNC Obj;
 
     temp.Set_StatusCode(val);
-    Obj.StartUpStatusflag =temp.IsStatusCodeNOk();
+    Obj.Set_CNC_Parameter_flag(StartUpStatusflag,temp.IsStatusCodeNOk());
     return(Report_Diagnosis());
 }
