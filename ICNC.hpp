@@ -25,7 +25,7 @@ CNC_Status Report_Diagnosis();
 class ICNC
 {
 private:
-    bool CNC_Param_flag[Param_List_end];
+    static bool CNC_Param_flag[Param_List_end];
 public:
 
     bool Get_CNC_Parameter_flag(CNC_Param_List param)
