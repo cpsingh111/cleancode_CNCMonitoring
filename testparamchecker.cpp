@@ -2,11 +2,9 @@
 #include "ICNC.hpp"
 #include <gtest/gtest.h>
 #include "IDimensionVariation.hpp"
+#include "IOperatingHour.hpp"
+#include "IOperatingTemperature.hpp"
 
-
-TEST(StatusCode, ok) { 
-    ASSERT_EQ(CNC_Ok, Notify_StatusCode(0xFF));
-}
 
 TEST(StatusCode, Empty) { 
     ASSERT_EQ(CNC_CheckMachine, Notify_StatusCode(0x00));
@@ -26,13 +24,41 @@ TEST(StatusCode, Undefined) {
     ASSERT_EQ(CNC_CheckMachine, Notify_StatusCode(0x03));
 }
 
-TEST(DImensionVariation, Ok) { 
+TEST(StatusCode, ok) { 
+    ASSERT_EQ(CNC_Ok, Notify_StatusCode(0xFF));
+}
+
+TEST(DimensionVariation, NOk) { 
+    ASSERT_EQ(CNC_CheckMachine, Notify_DimensionVariation(0.06));
+}
+
+TEST(DimensionVariation, Ok) { 
     ASSERT_EQ(CNC_Ok, Notify_DimensionVariation(0.02));
 }
 
-TEST(DImensionVariation, NOk) { 
-    ASSERT_EQ(CNC_CheckMachine, Notify_DimensionVariation(0.06));
+
+TEST(OperatinHour, NOk) { 
+    ASSERT_EQ(CNC_CheckEnvironment, Notify_OperatingHour(361));
 }
+
+TEST(OperatingHour, Ok) { 
+    ASSERT_EQ(CNC_CheckMachine_Environment, Notify_OperatingHour(359));
+}
+
+TEST(OperatingTemp, NOK) { 
+    ASSERT_EQ(CNC_CheckMachine_Environment, Notify_OperatingTemperature(36));
+}
+
+
+TEST(OperatingTemp, OK) { 
+    ASSERT_EQ(CNC_CheckMachine_Environment, Notify_OperatingTemperature(34));
+}
+
+TEST(Combination_Dimension_OperatingTemp, NOK) { 
+    ASSERT(Notify_DimensionVariation(0.06));
+    ASSERT_EQ(CNC_CheckMachine_Environment, Notify_OperatingTemperature(36));
+}
+
 
 
 
