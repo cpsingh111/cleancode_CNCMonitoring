@@ -25,7 +25,6 @@ CNC_Status Report_Diagnosis();
 class ICNC
 {
 private:
-    CNC_Status CNC_LED;
     bool CNC_Param_flag[Param_List_end];
 public:
 
@@ -39,7 +38,6 @@ public:
 
     ICNC()
     {
-       CNC_LED = CNC_Ok;
        for(int i=0;i<Param_List_end;i++){
            CNC_Param_flag[i]= false;
        }
