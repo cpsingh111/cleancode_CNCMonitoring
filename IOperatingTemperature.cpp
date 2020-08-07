@@ -1,5 +1,6 @@
 #include "IOperatingTemperature.hpp"
 
+bool ICNC::CNC_Param_flag[Param_List_end];
 
 CNC_Status Notify_OperatingTemperature(float val)
 {
