@@ -5,7 +5,7 @@
 
 CNC_Status Notify_OperatingTemperature(float val);
 
-class IOperatingTemperature
+class IOperatingTemperature: public ICNC
 {
 private:
     float OperatingTemperature;
