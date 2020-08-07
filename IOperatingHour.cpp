@@ -7,6 +7,6 @@ CNC_Status Notify_OperatingHour(float val)
     ICNC Obj;
 
     temp.Set_OperatingHour(val);
-    Obj.OperatingHourflag=temp.IsOperatingHourNok();
+    Obj.Set_CNC_Parameter_flag(OperatingHourflag,temp.IsOperatingHourNok());
     return(Report_Diagnosis());
 }
