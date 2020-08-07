@@ -6,6 +6,6 @@ CNC_Status Notify_DimensionVariation(float val)
     ICNC Obj;
 
     temp.Set_DimensionVariation(val);
-    Obj.DimensionVariationflag =temp.IsDimensionVariationNok();
+    Obj.Set_CNC_Parameter_flag(DimensionVariationflag,temp.IsDimensionVariationNok());
     return(Report_Diagnosis());
 }
