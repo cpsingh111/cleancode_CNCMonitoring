@@ -5,7 +5,7 @@
 
 CNC_Status Notify_OperatingHour(float val);
 
-class IOperatingHour
+class IOperatingHour:public ICNC
 {
 private:
     float OperatingHour;
