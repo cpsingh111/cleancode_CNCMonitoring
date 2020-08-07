@@ -1,6 +1,8 @@
 #include "ICNC.hpp"
 #include "IValidator.hpp"
 
+bool CNC_Param_flag[Param_List_end];
+
 CNC_Status Report_Diagnosis(){
 
     bool Environmentflag, MachineFlag;
