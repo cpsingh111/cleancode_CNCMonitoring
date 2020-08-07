@@ -10,7 +10,7 @@
 
 CNC_Status Notify_StatusCode(float val);
 
-class IStatusCode
+class IStatusCode: public ICNC
 {
 private:
     float StatusCode;
