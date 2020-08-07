@@ -42,20 +42,20 @@ TEST(OperatinHour, NOk) {
 }
 
 TEST(OperatingHour, Ok) { 
-    ASSERT_EQ(CNC_CheckMachine_Environment, Notify_OperatingHour(359));
+    ASSERT_EQ(CNC_Ok, Notify_OperatingHour(359));
 }
 
 TEST(OperatingTemp, NOK) { 
-    ASSERT_EQ(CNC_CheckMachine_Environment, Notify_OperatingTemperature(36));
+    ASSERT_EQ(CNC_CheckEnvironment, Notify_OperatingTemperature(36));
 }
 
 
 TEST(OperatingTemp, OK) { 
-    ASSERT_EQ(CNC_CheckMachine_Environment, Notify_OperatingTemperature(34));
+    ASSERT_EQ(CNC_Ok, Notify_OperatingTemperature(34));
 }
 
 TEST(Combination_Dimension_OperatingTemp, NOK) { 
-    ASSERT(Notify_DimensionVariation(0.06));
+    ASSERT_EQ(CNC_CheckMachine, Notify_DimensionVariation(0.06));
     ASSERT_EQ(CNC_CheckMachine_Environment, Notify_OperatingTemperature(36));
 }
 
