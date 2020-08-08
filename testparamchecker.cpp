@@ -60,7 +60,7 @@ TEST(Machine_EnvironmentCheck, Transitions) {
     ASSERT_EQ(CNC_CheckMachine, Notify_StatusCode(0x02));
     ASSERT_EQ(CNC_CheckMachine, Notify_DimensionVariation(0.04));
     ASSERT_EQ(CNC_CheckMachine_Environment, Notify_OperatingTemperature(36));
-    ASSERT_EQ(CNC_CheckEnvironment, Notify_DimensionVariation(0.04));
+    ASSERT_EQ(CNC_CheckEnvironment, Notify_StatusCode(0xFF));
     ASSERT_EQ(CNC_Ok, Notify_OperatingTemperature(34));
     ASSERT_EQ(CNC_CheckEnvironment, Notify_OperatingHour(361));
     ASSERT_EQ(CNC_CheckEnvironment, Notify_OperatingTemperature(36));
