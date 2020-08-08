@@ -37,7 +37,7 @@ TEST(DimensionVariation, Ok) {
 }
 
 
-TEST(OperatinHour, NOk) { 
+TEST(OperatingHour, NOk) { 
     ASSERT_EQ(CNC_CheckEnvironment, Notify_OperatingHour(361));
 }
 
@@ -54,12 +54,20 @@ TEST(OperatingTemp, OK) {
     ASSERT_EQ(CNC_Ok, Notify_OperatingTemperature(34));
 }
 
-TEST(Combination_Dimension_OperatingTemp, NOK) { 
+
+TEST(Machine_EnvironmentCheck, Transitions) { 
     ASSERT_EQ(CNC_CheckMachine, Notify_DimensionVariation(0.06));
+    ASSERT_EQ(CNC_CheckMachine, Notify_StatusCode(0x02));
+    ASSERT_EQ(CNC_CheckMachine, Notify_DimensionVariation(0.04));
     ASSERT_EQ(CNC_CheckMachine_Environment, Notify_OperatingTemperature(36));
+    ASSERT_EQ(CNC_CheckEnvironment, Notify_DimensionVariation(0.04));
+    ASSERT_EQ(CNC_Ok, Notify_OperatingTemperature(34));
+    ASSERT_EQ(CNC_CheckEnvironment, Notify_OperatingHour(361));
+    ASSERT_EQ(CNC_CheckEnvironment, Notify_OperatingTemperature(36));
+    ASSERT_EQ(CNC_CheckEnvironment, Notify_OperatingTemperature(34));
+    ASSERT_EQ(CNC_Ok, Notify_OperatingHour(359));
+
 }
-
-
 
 
 int main(int argc, char **argv) {
